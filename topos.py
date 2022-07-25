@@ -94,7 +94,7 @@ parser_f_ratio = subparsers.add_parser('f_ratio', parents = [parent_conversion_f
 # expression matrix representing single-cell group
 parser_f_ratio.add_argument(
     '-s', '--single_cell',
-    default = '/home/danilo/Documents/projects/topos/analyses/test/ctc/ctcRbase/output/datasets/pooled/breast/CTCs-BRCA-pooled_all-cells_24300-genes_tpm.tsv',
+    default = './required_data/f_ratio/CTC-pooled_BRCA_tpm.tsv',
     help = ''
 )
 
@@ -102,7 +102,7 @@ parser_f_ratio.add_argument(
 # expression matrix representing bulk group
 parser_f_ratio.add_argument(
     '-b', '--bulk',
-    default = '/home/danilo/Documents/projects/topos/analyses/normalization/output/tpm/training/tcga-met500-ccle/TCGA-only/tcga-only_breast-only_tpm.tsv',
+    default = './required_data/f_ratio/TCGA-BRCA_from_training_tpm.tsv',
     help = ''
 )
 

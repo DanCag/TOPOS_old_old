@@ -13,7 +13,7 @@ You need to have Conda installed as a prerequisite.
 2. Download necessary files from [zenodo]()
 3. Move files into `TOPOS` directory
 4. Go inside TOPOS directory: `cd TOPOS`
-5. Extract each compressed archive `required_data.tar.gz`, `playground.tar.gz`, `example`:
+5. Extract each compressed archive `required_data.tar.gz`, `playground.tar.gz`, `test`:
 
 ```
 tar xvf <compressed archive>
@@ -50,7 +50,7 @@ The tool comes with four commands:
 ### Example of conversion
 
 ```
-./topos.py conversion -i ./example/conversion/input/PDX-nature_fpkm.tsv -o ./example/conversion/output/PDX-nature_tpm.tsv 
+./topos.py conversion -i ./test/conversion/input/PDX-nature_fpkm.tsv -o ./test/conversion/output/PDX-nature_tpm.tsv 
 ```
 
 **Required parameters**:
@@ -82,7 +82,7 @@ path where to write the converted expression matrix file (tab-separated).
 ### Example of F-ratio computation
 
 ```
-./topos.py f_ratio -o ./example/f_ratio/output/f_ratio.tsv
+./topos.py f_ratio -o ./test/f_ratio/output/f_ratio.tsv
 
 ```
 
@@ -110,7 +110,7 @@ Default matrixes are available in ./required_data/f_ratio under the name _CTC-po
 ### Example of tumor prediction
 
 ```
-./topos.py tumor_prediction -tst ./playground/datasets/ctc/ctcRbase/breast-GSE109761_tpm.tsv -gl ./required_data/less_divergent_genes.txt -pd ./example/tumor_prediction/output
+./topos.py tumor_prediction -tst ./playground/datasets/ctc/ctcRbase/breast-GSE109761_tpm.tsv -gl ./required_data/less_divergent_genes.txt -pd ./test/tumor_prediction/output
 ```
 
 **Required parameters**
@@ -134,7 +134,7 @@ If not provided, TOPOS will use the overlap between training and testing matrixe
 
 ### Example of TOO prediction
 ```
-./topos.py too_prediction -tst ./playground/datasets/ctc/ctcRbase/breast-GSE109761_tpm.tsv -gl ./required_data/less_divergent_genes.txt -pd ./example/too_prediction/output
+./topos.py too_prediction -tst ./playground/datasets/ctc/ctcRbase/breast-GSE109761_tpm.tsv -gl ./required_data/less_divergent_genes.txt -pd ./test/too_prediction/output
 
 ```
 
