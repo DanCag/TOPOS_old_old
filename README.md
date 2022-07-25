@@ -10,7 +10,7 @@ Get TOPOS ready
 You need to have Conda installed as a prerequisite.
 
 1. Download TOPOS repository: `git clone https://github.com/DanCag/TOPOS`
-2. Download TOPOS required files from
+2. Download TOPOS required files from [zenodo]()
 3. Move files into TOPOS folder
 4. Go inside TOPOS directory: `cd TOPOS`
 5. Extract each compressed archive `required_data.tar.gz`, `playground.tar.gz`, `example`:
@@ -18,7 +18,7 @@ You need to have Conda installed as a prerequisite.
 ```
 tar xvf <compressed archive>
 ```
-(you should see new directories with compressed archives' names after doing this)
+(you should see new directories with same name of compressed archives after doing this)
 
 6. Create the conda environment: `conda env create -f ./topos.yml`
 7. Activate the environment `conda activate TOPOS`
@@ -27,15 +27,15 @@ tar xvf <compressed archive>
 
 Data
 ----
-* `required_data` contains all necessary files for running TOPOS commands (such as the training matrixes)
-* `playground` contains all the datasets on which we predict TOO in the study
-* `example` is a folder user can use to run some tests
+* `required_data` contains all necessary files for running TOPOS commands
+* `playground` contains all the datasets used in the study
+* `test` is a folder that can be use to run some tests
 
 Usage
 -----
 
 
-The tool comes with three commands:
+The tool comes with four commands:
 
 - `conversion` allows user to convert gene expression file from RPKM/FPKM to TPM
 
@@ -110,7 +110,7 @@ Default matrixes are available in ./required_data/f_ratio under the name _CTC-po
 ### Example of tumor prediction
 
 ```
-./topos.py tumor_prediction -tst ./playground/datasets/breast-GSE109761_tpm.tsv -gl ./required_data/less_divergent_genes.txt -pd ./example/tumor_prediction/output
+./topos.py tumor_prediction -tst ./playground/datasets/ctc/ctcRbase/breast-GSE109761_tpm.tsv -gl ./required_data/less_divergent_genes.txt -pd ./example/tumor_prediction/output
 ```
 
 **Required parameters**
@@ -134,7 +134,7 @@ If not provided, TOPOS will use the overlap between training and testing matrixe
 
 ### Example of TOO prediction
 ```
-./topos.py too_prediction -tst ./playground/datasets/breast-GSE109761_tpm.tsv -gl ./required_data/less_divergent_genes.txt -pd ./example/too_prediction/output
+./topos.py too_prediction -tst ./playground/datasets/ctc/ctcRbase/breast-GSE109761_tpm.tsv -gl ./required_data/less_divergent_genes.txt -pd ./example/too_prediction/output
 
 ```
 
@@ -164,95 +164,3 @@ Runtimes are estimated on the following machine:
 | **OS**     | Ubuntu 20.04.4 LTS |
 | **Memory** | 5.5 Gib     |
 | **Processor** | Intel® Core™ i5-8500T CPU @ 2.10GHz × 6 |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Markdown syntax guide
-
-## Headers
-
-# This is a Heading h1
-## This is a Heading h2 
-###### This is a Heading h6
-
-## Emphasis
-
-*This text will be italic*  
-_This will also be italic_
-
-**This text will be bold**  
-__This will also be bold__
-
-_You **can** combine them_
-
-## Lists
-
-### Unordered
-
-* Item 1
-* Item 2
-* Item 2a
-* Item 2b
-
-### Ordered
-
-1. Item 1
-1. Item 2
-1. Item 3
-  1. Item 3a
-  1. Item 3b
-
-## Images
-
-![This is a alt text.](/image/sample.png "This is a sample image.")
-
-## Links
-
-You may be using [Markdown Live Preview](https://markdownlivepreview.com/).
-
-## Blockquotes
-
-> Markdown is a lightweight markup language with plain-text-formatting syntax, created in 2004 by John Gruber with Aaron Swartz.
->
->> Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
-
-## Tables
-
-| Left columns  | Right columns |
-| ------------- |:-------------:|
-| left foo      | right foo     |
-| left bar      | right bar     |
-| left baz      | right baz     |
-
-## Blocks of code
-
-```
-let message = 'Hello world';
-alert(message);
-```
-
-## Inline code
-
-This web site is using `markedjs/marked`.
