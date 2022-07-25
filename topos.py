@@ -1,8 +1,5 @@
 #! /usr/bin/env python3
 
-import time
-start_time = time.time()
-
 
 # command-line parsing module
 import argparse
@@ -146,7 +143,7 @@ if args.command == 'conversion':
     
     print('\n')
     print('You are running TOPOS in\n')
-    print(' ++++++++++++++++++\n', 
+    print(' +++++++++++++++++++\n', 
           '+ Conversion mode +\n', 
           '+++++++++++++++++++ ')
     print('\n')
@@ -169,7 +166,7 @@ elif args.command == 'f_ratio':
     
     print('\n')
     print('You are running TOPOS in\n')
-    print(' +++++++++++++++ \n', 
+    print(' ++++++++++++++++ \n', 
           '+ F ratio mode +\n', 
           '++++++++++++++++ ')
     print('\n')
@@ -274,7 +271,7 @@ else:
         
     print('\n')
     print('You are running TOPOS in\n')
-    print(' +++++++++++++++++++++\n', 
+    print(' ++++++++++++++++++++++\n', 
           '+ TOO detection mode +\n', 
           '++++++++++++++++++++++')
     print('\n')
@@ -346,5 +343,3 @@ else:
     )
     
     print('... TOO prediction ends ...\n\n')
-
-print("--- %s seconds ---" % (time.time() - start_time))

@@ -1,7 +1,7 @@
 TOPOS: Tissue-of-Origin Predictor of Onco-Samples
 =================================================
 
-A versatile machine-learning classifier based on SVMs to predict the cancer type of primary, metastasis, cell line and circulating tumor cells (CTCs) samples.
+A versatile machine-learning classifier based on SVMs to predict the tissue of origin (TOO) of primary, metastasis, cell line and circulating tumor cells (CTCs) samples.
 
 
 Get TOPOS ready
@@ -10,21 +10,26 @@ Get TOPOS ready
 You need to have Conda installed as a prerequisite.
 
 1. Download TOPOS repository: `git clone https://github.com/DanCag/TOPOS`
-2. Go into topos directory: `cd TOPOS`
-3. Extract the compressed archive `training.tar.gz` into `./required_data` directory:
+2. Download TOPOS required files from
+3. Move files into TOPOS folder
+4. Go inside TOPOS directory: `cd TOPOS`
+5. Extract each compressed archive `required_data.tar.gz`, `playground.tar.gz`, `example`:
 
 ```
-tar xvf ./required_data/training.tar.gz -C ./required_data/
+tar xvf <compressed archive>
 ```
-(you should see the new directory `./required_data/training` after doing this)
+(you should see new directories with compressed archives' names after doing this)
 
-4. Make TOPOS executable: `sudo chmod +x topos.py`
-5. Create the conda environment: `conda env create -f ./topos.yml`
-6. Activate the environment `conda activate TOPOS`
+6. Create the conda environment: `conda env create -f ./topos.yml`
+7. Activate the environment `conda activate TOPOS`
 
-If you want to play with the datasets used in the study,
-you need to extract the `./playground.tar.gz` compressed archive
 
+
+Data
+----
+* `required_data` contains all necessary files for running TOPOS commands (such as the training matrixes)
+* `playground` contains all the datasets on which we predict TOO in the study
+* `example` is a folder user can use to run some tests
 
 Usage
 -----
@@ -39,6 +44,7 @@ The tool comes with three commands:
 - `tumor_prediction` trains a SVM to distinguish between tumor and non-tumor cells and make predictions on user gene expression dataset.
 
 - `too_prediction` trains a SVM to distinguish between 15 different tissues of origin (TOOs) and make prediction on user expression dataset.
+
 
 
 ### Example of conversion
@@ -158,3 +164,95 @@ Runtimes are estimated on the following machine:
 | **OS**     | Ubuntu 20.04.4 LTS |
 | **Memory** | 5.5 Gib     |
 | **Processor** | Intel® Core™ i5-8500T CPU @ 2.10GHz × 6 |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Markdown syntax guide
+
+## Headers
+
+# This is a Heading h1
+## This is a Heading h2 
+###### This is a Heading h6
+
+## Emphasis
+
+*This text will be italic*  
+_This will also be italic_
+
+**This text will be bold**  
+__This will also be bold__
+
+_You **can** combine them_
+
+## Lists
+
+### Unordered
+
+* Item 1
+* Item 2
+* Item 2a
+* Item 2b
+
+### Ordered
+
+1. Item 1
+1. Item 2
+1. Item 3
+  1. Item 3a
+  1. Item 3b
+
+## Images
+
+![This is a alt text.](/image/sample.png "This is a sample image.")
+
+## Links
+
+You may be using [Markdown Live Preview](https://markdownlivepreview.com/).
+
+## Blockquotes
+
+> Markdown is a lightweight markup language with plain-text-formatting syntax, created in 2004 by John Gruber with Aaron Swartz.
+>
+>> Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+
+## Tables
+
+| Left columns  | Right columns |
+| ------------- |:-------------:|
+| left foo      | right foo     |
+| left bar      | right bar     |
+| left baz      | right baz     |
+
+## Blocks of code
+
+```
+let message = 'Hello world';
+alert(message);
+```
+
+## Inline code
+
+This web site is using `markedjs/marked`.
