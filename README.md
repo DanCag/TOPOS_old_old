@@ -10,7 +10,7 @@ Get TOPOS ready
 You need to have Conda installed as a prerequisite.
 
 1. Download TOPOS repository: `git clone https://github.com/DanCag/TOPOS` (you should see a new directory called `TOPOS`)
-2. Download TOPOS required files from [zenodo]()
+2. Download necessary files from [zenodo]()
 3. Move files into `TOPOS` directory
 4. Go inside TOPOS directory: `cd TOPOS`
 5. Extract each compressed archive `required_data.tar.gz`, `playground.tar.gz`, `example`:
