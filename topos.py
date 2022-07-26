@@ -183,7 +183,7 @@ elif args.command == 'f_ratio':
         output_path = args.output_file
     )
     
-    print('... F-ratio compuation ends ...\n')
+    print('... F-ratio computation ends ...\n')
     
     
 elif args.command == 'tumor_prediction':

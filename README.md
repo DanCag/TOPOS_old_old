@@ -80,7 +80,6 @@ path where to write the converted expression matrix file (tab-separated).
 
 
 ### Example of F-ratio computation
-**Please note that with default parameters the F-ratio example takes around 4 hours to run!**
 
 ```
 ./topos.py f_ratio -o ./test/f_ratio/output/f_ratio.tsv
@@ -104,7 +103,7 @@ Default is a gene expression matrix (TPM) with TCGA-BRCA samples extracted from 
 
 Default matrixes are available in ./required_data/f_ratio under the name _CTC-pooled_BRCA_tpm.tsv_ and _TCGA-BRCA\_from_training_tpm.tsv_ respectively. These are the matrixes used in the study to compute F-ratio.
 
-*Runtime*: ~ 4 hours (default single-cell matrix has 339 cells, default bulk matrix has 662 samples, genes in common are 14112)
+*Runtime*: ~ 0.4 minute (default single-cell matrix has 339 cells, default bulk matrix has 662 samples, genes in common are 14112)
 
 
 
