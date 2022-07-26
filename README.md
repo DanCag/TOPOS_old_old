@@ -80,6 +80,7 @@ path where to write the converted expression matrix file (tab-separated).
 
 
 ### Example of F-ratio computation
+**Please note that with default parameters the F-ratio example takes around 4 hours to run!**
 
 ```
 ./topos.py f_ratio -o ./test/f_ratio/output/f_ratio.tsv
