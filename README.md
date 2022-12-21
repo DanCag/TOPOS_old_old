@@ -35,13 +35,11 @@ Usage
 -----
 
 
-The tool comes with four commands:
+The tool comes with three commands:
 
 - `conversion` allows user to convert gene expression file from RPKM/FPKM to TPM
 
 - `f_ratio` allows user to compute ANOVA F-ratio by comparing gene expression of each feature in single-cell and bulk experiment. F-ratio provides an estimate of divergence of gene expression between the groups compared. The command returns a table with F and p value for each gene. The user can then decide to pick only genes with close expression between the two groups for training and testing the classifiers.
-
-- `tumor_prediction` trains a SVM to distinguish between tumor and non-tumor cells and make predictions on user gene expression dataset.
 
 - `too_prediction` trains a SVM to distinguish between 15 different tissues of origin (TOOs) and make prediction on user expression dataset.
 
@@ -104,32 +102,6 @@ Default is a gene expression matrix (TPM) with TCGA-BRCA samples extracted from 
 Default matrixes are available in ./required_data/f_ratio under the name _CTC-pooled_BRCA_tpm.tsv_ and _TCGA-BRCA\_from_training_tpm.tsv_ respectively. These are the matrixes used in the study to compute F-ratio.
 
 *Runtime*: ~ 0.4 minute (default single-cell matrix has 339 cells, default bulk matrix has 662 samples, genes in common are 14112)
-
-
-
-### Example of tumor prediction
-
-```
-./topos.py tumor_prediction -tst ./playground/datasets/ctc/ctcRbase/breast-GSE109761_tpm.tsv -gl ./required_data/less_divergent_genes.txt -pd ./test/tumor_prediction/output
-```
-
-**Required parameters**
-
-- `-tst`, `--testing_exp`<br>
-path of user's testing expression matrix
-
-- `-pd`, `--prediction_directory`<br>
-path of prediction directory where to store prediction file
-
-
-**Optional parameter**
-
-- `-gl`, `--gene_list`<br>
-path of gene list file. The file contains genes (entrez gene ids) to use for training and testing.<br>
-If not provided, TOPOS will use the overlap between training and testing matrixes' features.
-
-*Runtime*: ~ 0.4 minute
-
 
 
 ### Example of TOO prediction
